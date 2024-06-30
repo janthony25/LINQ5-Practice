@@ -2,7 +2,7 @@
 
 namespace LINQ5_Practice.Models
 {
-    public class tblSubjects
+    public class tblSubject
     {
         [Key]
         public int SubjectId { get; set; }
@@ -10,5 +10,8 @@ namespace LINQ5_Practice.Models
         public string SubjectName { get; set; }
         [Required]
         public double SubjectUnit { get; set; }
+        public ICollection<tblStudent> tblStudent { get; set; }
+        public int CourseId { get; set; }
+        public tblCourse tblCourse { get; set; }
     }
 }

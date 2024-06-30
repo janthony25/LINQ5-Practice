@@ -8,5 +8,7 @@ namespace LINQ5_Practice.Models
         public int CourseId { get; set; }
         [Required]
         public string CourseName { get; set; }
+        public ICollection<tblStudent> tblStudent { get; set; }
+        public ICollection<tblSubject> tblSubject { get; set; }
     }
 }
