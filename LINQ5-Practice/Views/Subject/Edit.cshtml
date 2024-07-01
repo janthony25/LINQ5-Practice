@@ -1,0 +1,27 @@
+﻿@model LINQ5_Practice.Models.tblSubject
+
+<h1>Edit Subject</h1>
+<form method="post" asp-action="Edit">
+
+    <input asp-for="SubjectId" />
+
+    <div class="form-group mb-2">
+        <label asp-for="SubjectName"></label>
+        <input asp-for="SubjectName" />
+        <span asp-validation-for="SubjectName"></span>
+    </div>
+    <div class="form-group mb-2">
+        <label asp-for="SubjectUnit"></label>
+        <input asp-for="SubjectUnit" />
+        <span asp-validation-for="SubjectUnit"></span>
+    </div>
+    <div class="form-group mb-2">
+        <label asp-for="CourseId"></label>
+        <input asp-for="CourseId" />
+        <span asp-validation-for="CourseId"></span>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary ms-4">Update</button>
+        <a asp-controller="Subject" asp-action="Index">Back to List</a>
+    </div>
+</form>

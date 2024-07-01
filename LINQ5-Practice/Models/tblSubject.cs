@@ -9,9 +9,9 @@ namespace LINQ5_Practice.Models
         [Required]
         public string SubjectName { get; set; }
         [Required]
-        public double SubjectUnit { get; set; }
-        public ICollection<tblStudent> tblStudent { get; set; }
+        public decimal SubjectUnit { get; set; }
+        public ICollection<tblStudent>? tblStudent { get; set; }
         public int CourseId { get; set; }
-        public tblCourse tblCourse { get; set; }
+        public tblCourse? tblCourse { get; set; }
     }
 }
