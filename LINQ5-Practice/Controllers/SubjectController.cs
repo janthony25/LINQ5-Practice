@@ -48,10 +48,10 @@ namespace LINQ5_Practice.Controllers
                 return NotFound();
             }
             var subject = _context.tblSubject.FirstOrDefault(s => s.SubjectId == id);
-            if (subject == null)
-            {
-                return NotFound();
-            }
+            //if (subject == null)
+            //{
+            //    return NotFound();
+            //}
             return View(subject);
         }
 
@@ -69,7 +69,41 @@ namespace LINQ5_Practice.Controllers
             }
             return View(subject);
         }
-            
+
+        //GET
+        public IActionResult Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var subject = _context.tblSubject.FirstOrDefault(s => s.SubjectId == id);
+            //if (subject == null)
+            //{
+            //    return NotFound();
+            //}
+            return View(subject);
         }
+
+        //WORKING DELETE
+        //POST
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeletePost(int? id)
+        {
+            
+
+            var subject = _context.tblSubject.Find(id);
+            if (subject == null)
+            {
+                return NotFound();
+            }
+
+            _context.tblSubject.Remove(subject);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
+
+    }
     }
 

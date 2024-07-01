@@ -21,7 +21,9 @@
                 <td>@sub.SubjectName</td>
                 <td>@sub.SubjectUnit</td>
                 <td>@sub.CourseId</td>
-                <th><a asp-controller="Subject" asp-action="Edit" asp-route-id="@sub.SubjectId">Edit</a></th>
+                <th><a asp-controller="Subject" asp-action="Edit" asp-route-id="@sub.SubjectId">Edit</a>
+                    <a asp-controller="Subject" asp-action="Delete" asp-route-id="@sub.SubjectId">Delete</a>
+                </th>
             </tr>
         }
     </tbody>
